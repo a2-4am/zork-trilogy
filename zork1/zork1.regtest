@@ -1,0 +1,546 @@
+#
+# RegTest for ZORK I: The Great Underground Empire
+#
+# An incomplete test suite for Zork I. It sends commands through Voxam,
+# a pure-Python Z-machine interpreter, and checks the resulting output.
+# <https://github.com/jeffnyman/voxam/>
+# The 'sanity' test should pass in both r88 and r200. All other tests
+# are designed to fail in r88 and pass in r200.
+#
+# Usage:
+# $ python3 regtest.py -g path/to/zork.z3 path/to/this/file.regtest
+#
+** interpreter: voxam --plain --seed 92
+
+# ----------------------------------------------------------------------
+# Some helper macros, adapted from this walkthrough:
+# https://github.com/jeffnyman/voxam/blob/main/acceptance/zork1-r88-s840726.accept
+#
+# The most significant change is that you hold onto the matchbook long
+# enough to drop it in the living room, where it can be easily accessed
+# to test burning things.
+
+* _go_to_nest
+> n. n. u
+
+* _go_to_kitchen
+>{include} _go_to_nest
+> get egg
+> d. s. e
+> open window
+> w
+
+* _go_to_cellar
+>{include} _go_to_kitchen
+> get all
+> w
+> open sack
+> get lunch and garlic
+> drop all
+> get sword and lamp
+> move rug
+> open trapdoor
+> open case
+> e. u
+> turn on lamp
+> get all
+> d
+
+* _go_to_gallery
+>{include} _go_to_cellar
+> w
+> drop knife
+> d. s. e
+
+* _go_to_troll_room
+>{include} _go_to_gallery
+> get painting
+> w. n. n
+
+* _go_to_round_room
+>{include} _go_to_troll_room
+> kill troll
+> kill troll
+> kill troll
+> drop sword
+> e. e
+
+* _go_to_dome_room
+>{include} _go_to_round_room
+> se. e
+
+* _go_to_torch_room
+>{include} _go_to_dome_room
+> tie rope to railing
+> d
+
+* _go_to_maze
+>{include} _go_to_torch_room
+> s. e
+> get coffin
+> w. s
+> pray
+> s. n. w. w. w
+> open coffin
+> get sceptre
+> put coffin and painting in case
+> e. e. e. e. d. d. n
+> wave sceptre
+> e. e. n. n
+> get shovel
+> ne
+> dig sand
+> again. again. again
+> drop shovel
+> get scarab
+> sw. s. s. w. w
+> get pot
+> sw. u. u. nw. w. w. w
+> put all but lamp in case
+> get all but sack and garlic
+> open trapdoor
+> d. n. w
+
+* _go_to_cyclops_room
+>{include} _go_to_maze
+> s. e. u
+> get bag and key
+> sw. e. s. se
+> give lunch and water to cyclops
+
+* _go_to_treasure_room
+>{include} _go_to_cyclops_room
+> u
+> give egg to thief
+
+* _go_to_grating_room
+>{include} _go_to_treasure_room
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> get all but stiletto
+> drop knife
+> d. nw. s. w. u. d. ne
+
+* _go_to_unlocked_clearing
+>{include} _go_to_grating_room
+> unlock grate
+> open grate
+> u
+
+* _go_to_dam_lobby
+>{include} _go_to_unlocked_clearing
+> drop key in grate
+> s
+> wind up canary
+> get bauble
+> s. e. w. w
+> get canary
+> put all but lamp in case
+> get garlic
+> d. n. e. n. ne. e. n
+> get matchbook
+
+* _go_to_boat
+>{include} _go_to_dam_lobby
+> e
+> push yellow
+> get wrench and screwdriver
+> w. s
+> drop garlic and screwdriver
+> turn bolt with wrench
+> drop wrench
+> e
+> get plastic
+> n
+> drop plastic
+> s. sw. s. e
+> echo
+> get bar
+> w. se. e. d
+> turn off lamp
+> get torch
+> s
+> get bell
+> s
+> get all
+> d. d
+> ring bell
+> get candles
+> light match
+> light candles
+> read book
+> s
+> get skull
+> n. u. n. n. n. w. w. s. u
+> put skull and bar in case
+> d. n. e. n. ne. e
+> get garlic and screwdriver
+> w. n
+> drop all but torch. get trunk
+> n. n
+> get trident
+> s. s. s. sw. sw. w. s. u
+> put trunk and trident in case
+> d. n. e. n. ne. n
+> get all
+> n. n. u. n. n. w. n. w
+> drop torch
+> turn on lamp
+> n
+> get figurine
+> s
+> drop figurine
+> n. e
+> drop all but lamp and garlic
+> n. d. e. ne. se. sw. d. d. s
+> get coal
+> n. u. u. n. e. s. n. u. s
+> get all
+> put coal and screwdriver in basket
+> light match
+> light candles with match
+> put candles in basket
+> lower basket
+> n. d. e. ne. se. sw. d. d. w
+> drop all but matchbook
+> w
+> get coal and candles and screwdriver
+> s
+> open lid
+> put coal in machine
+> close lid
+> turn switch with screwdriver
+> drop screwdriver
+> open lid
+> get diamond
+> n
+> put diamond in basket
+> drop candles
+> e
+> get all but timber
+> e. u. u. n. e. s. n
+> get sapphire
+> u. s
+> raise basket
+> get diamond
+> w. s
+> get all
+> e. s. d. u
+> drop garlic
+> drop matchbook
+> put all but lamp in case
+> d. n. e. n. ne. n. n
+> get pump
+> s. s. e
+> get plastic
+> s. d. e. e. s
+> drop plastic
+> inflate plastic
+> drop pump
+> enter boat
+
+* _go_to_end_living_room
+>{include} _go_to_boat
+> launch
+> get buoy
+> e
+> get out of boat
+> s. s
+> w. w. sw. u. u. nw. w. w. w
+> open buoy
+> put emerald in case
+
+* _go_to_end
+>{include} _go_to_end_living_room
+> e. e. n. w. sw. w
+
+# ----------------------------------------------------------------------
+* sanity
+# Sanity check that we are running the correct game and that the
+# walkthrough commands are valid. (This test should succeed in both
+# r88 and r200.)
+#
+{vital} ZORK I: The Great Underground Empire
+West of House
+>{include} _go_to_end
+Your score is 350
+
+# ----------------------------------------------------------------------
+* nathan-48
+# When destroying the painting, its value should be set to 0. So if you
+# destroy it before picking it up, you won't get any points for it.
+#
+>{include} _go_to_gallery
+> score
+Your score is 40
+> destroy painting with sword
+> get painting
+> score
+Your score is 40
+
+# ----------------------------------------------------------------------
+* nathan-50-open
+# You should not be able to open the bird's nest.
+#
+>{include} _go_to_nest
+> open nest
+You can't do that.
+
+# ----------------------------------------------------------------------
+* nathan-50-close
+# You should not be able to close the bird's nest.
+#
+>{include} _go_to_nest
+> close nest
+You can't do that.
+
+# ----------------------------------------------------------------------
+* nathan-57
+# TAKE ALL while you're in the boat should refuse to take the boat but
+# continue taking other objects, like the label.
+#
+>{include} _go_to_boat
+> take all
+tan label: Taken.
+
+# ----------------------------------------------------------------------
+* nathan-62
+# Dropping the bird's nest from up in the tree should cause it to fall
+# to the ground below.
+#
+>{include} _go_to_nest
+> get nest
+> drop nest
+> d
+There is a bird's nest here.
+
+# ----------------------------------------------------------------------
+* nathan-69
+# Opening the grate from above should not say that there are trees
+# above you.
+#
+>{include} _go_to_unlocked_clearing
+> close grate
+> open grate
+!trees above you
+
+# ----------------------------------------------------------------------
+* nathan-70-lock-while-open
+# Locking the grate should only work if the grate is closed.
+#
+>{include} _go_to_grating_room
+> unlock grate
+> open grate
+> lock grate
+The grate is open.
+
+# ----------------------------------------------------------------------
+* nathan-70-lock-while-locked
+# Locking the grate should only work if the grate is unlocked.
+#
+>{include} _go_to_grating_room
+> lock grate
+already locked
+
+# ----------------------------------------------------------------------
+* nathan-70-unlock-while-open
+# Unlocking the grate should only work if the grate is closed.
+#
+>{include} _go_to_grating_room
+> unlock grate
+> open grate
+> unlock grate
+already open
+
+# ----------------------------------------------------------------------
+* nathan-70-unlock-while-unlocked
+# Unlocking the grate should only work if the grate is unlocked.
+#
+>{include} _go_to_grating_room
+> unlock grate
+> unlock grate
+already unlocked
+
+# ----------------------------------------------------------------------
+* nathan-70-lock-with-anything
+# Locking the grate should only work with the key, not other objects.
+#
+>{include} _go_to_grating_room
+> unlock grate
+> lock grate with chalice
+Can you lock a grating with
+> lock grate with egg
+Can you lock a grating with
+> lock grate with canary
+Can you lock a grating with
+> lock grate with bag
+Can you lock a grating with
+> lock grate with lantern
+Can you lock a grating with
+
+# ----------------------------------------------------------------------
+* nathan-71
+# Items visible on the ground below should be described when up in tree.
+#
+> open mailbox
+> take leaflet
+> n
+> n
+> drop leaflet
+> u
+On the ground below you can see: a leaflet.
+
+# ----------------------------------------------------------------------
+* nathan-73
+# When you kill the thief in his lair, only declare the chalice safe to
+# take if the chalice is still there
+#
+>{include} _go_to_treasure_room
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> take chalice
+Taken.
+> kill thief
+!chalice is now safe to take
+
+# ----------------------------------------------------------------------
+* nathan-75
+# Putting objects in the grate from the Grating Room should not say they
+# go "into the darkness below".
+#
+>{include} _go_to_grating_room
+> unlock grate
+> open grate
+> put egg in grate
+!into the darkness below
+
+# ----------------------------------------------------------------------
+* tree-climb-down
+# CLIMB DOWN from up in the tree should just work without printing
+# "(down the tree)".
+>{include} _go_to_nest
+> climb down
+!down the tree
+
+# ----------------------------------------------------------------------
+* troll-unconscious-silent
+# The troll should not make any sound when he's unconscious.
+#
+>{include} _go_to_troll_room
+> kill troll
+> kill troll
+> listen to troll
+The troll makes no sound.
+
+# ----------------------------------------------------------------------
+* dome-room-pour
+# Issuing nonsensical commands like POUR FOO FROM ROPE in the Dome Room
+# should not drop the rope down to the room below.
+#
+>{include} _go_to_dome_room
+> pour painting from rope
+!rope
+
+# ----------------------------------------------------------------------
+* dome-room-jump
+# Jumping in the Dome Room should kill you with a specific message.
+#
+>{include} _go_to_dome_room
+> jump
+I'm afraid that the leap you attempted has done you in.
+
+# ----------------------------------------------------------------------
+* dome-room-jump-over
+# Jumping over the railing in the Dome Room should kill you.
+#
+>{include} _go_to_dome_room
+> jump over railing
+You have died
+
+# ----------------------------------------------------------------------
+* dome-room-climb-down
+# CLIMB DOWN from the Dome Room should work, as long as the rope is in
+# place.
+#
+>{include} _go_to_dome_room
+> tie rope to railing
+> climb down
+Torch Room
+
+# ----------------------------------------------------------------------
+* maze-taunt
+# The thief should pick up objects dropped in the maze and taunt you
+# about it.
+#
+>{include} _go_to_maze
+> s. e. u
+> get bag and key
+> sw. e. s
+I wonder what this fine rusty knife is doing here.
+
+# ----------------------------------------------------------------------
+* cyclops-room-throw
+# Throwing something at the sleeping cyclops should wake him up.
+#
+>{include} _go_to_cyclops_room
+> throw knife at cyclops
+woke him up
+
+# ----------------------------------------------------------------------
+* buoy-funny
+# You should notice something funny when you pick up the buoy.
+#
+>{include} _go_to_boat
+> launch
+> get buoy
+You notice something funny
+
+# ----------------------------------------------------------------------
+* burn-leaves
+# Burning the leaves while they are on the ground should not kill you.
+#
+>{include} _go_to_dam_lobby
+> s. w. sw. sw. w. s. u
+> e. e. n. n. n. d
+> light match
+> burn leaves
+!You have died
+
+# ----------------------------------------------------------------------
+* burn-leaves-in-boat
+# Burning the leaves while they are in a container you are not carrying
+# (e.g. the inflated boat) should not kill you.
+#
+>{include} _go_to_boat
+> get out of boat
+> drop all but lantern
+> n. w. w. w. w. w. s. u
+> e. e. n. n. n. d
+> take leaves
+> u. s. s. e. w. w
+> take matchbook
+> d. n. e. e. e. e. e. s
+> put leaves in boat
+> light match
+> burn leaves
+!You have died
+
+# ----------------------------------------------------------------------
+* lose-light-match
+# When a lit match is your only light source and it goes out, the game
+# should say "It is now pitch black."
+#
+>{include}_go_to_end_living_room
+> take matchbook
+> d
+> turn off lamp
+> light match
+> wait
+It is now pitch black.
