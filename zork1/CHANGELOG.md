@@ -101,6 +101,7 @@ This version is one I'm working on, trying to fix as many of the known bugs as I
 * Dropping or putting a weapon in the boat while you are inside now moves the weapon to the room, along with the rest of the contents of the boat.
 * Entering the Bat Room without garlic now honors brief and superbrief mode. Before it would always print the full room description.
 * In the unlikely event that entering the thief's lair causes him to hide the last light source, update `LIT` on entry.
+* [4am] "`HELLO CYCLOPS`" and "`GIVE` _object_ `TO CYCLOPS`" now check if the cyclops is asleep.
 
 ### Stylistic fixes
 
