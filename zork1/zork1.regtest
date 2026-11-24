@@ -486,7 +486,27 @@ Torch Room
 I wonder what this fine rusty knife is doing here.
 
 # ----------------------------------------------------------------------
-* cyclops-room-throw
+* sleeping-cyclops-give
+# Giving something to the sleeping cyclops should acknowledge that he is
+# asleep.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/7ba4e0b1b509a48704b9e848ccd816caca86545e
+#
+>{include} _go_to_cyclops_room
+> give key to cyclops
+asleep
+
+# ----------------------------------------------------------------------
+* sleeping-cyclops-hello
+# Saying hello at the sleeping cyclops should acknowledge that he is
+# asleep.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/ae5c2e8017bc22eab4637ed94c8ac02f142c5207
+#
+>{include} _go_to_cyclops_room
+> hello cyclops
+asleep
+
+# ----------------------------------------------------------------------
+* sleeping-cyclops-throw
 # Throwing something at the sleeping cyclops should wake him up.
 #
 >{include} _go_to_cyclops_room
