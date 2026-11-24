@@ -274,6 +274,7 @@ Your score is 350
 * nathan-48
 # When destroying the painting, its value should be set to 0. So if you
 # destroy it before picking it up, you won't get any points for it.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/d9a8a60612111361d611d8739f884c918d7eff3f
 #
 >{include} _go_to_gallery
 > score
@@ -286,6 +287,7 @@ Your score is 40
 # ----------------------------------------------------------------------
 * nathan-50-open
 # You should not be able to open the bird's nest.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/df073be27cc7723ec318b23dd5d5d5eb6c010b7a
 #
 >{include} _go_to_nest
 > open nest
@@ -294,6 +296,7 @@ You can't do that.
 # ----------------------------------------------------------------------
 * nathan-50-close
 # You should not be able to close the bird's nest.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/df073be27cc7723ec318b23dd5d5d5eb6c010b7a
 #
 >{include} _go_to_nest
 > close nest
@@ -312,6 +315,7 @@ tan label: Taken.
 * nathan-62
 # Dropping the bird's nest from up in the tree should cause it to fall
 # to the ground below.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/12277e91d669a43f922d49af3cd1deea718d4c2b
 #
 >{include} _go_to_nest
 > get nest
@@ -323,6 +327,7 @@ There is a bird's nest here.
 * nathan-69
 # Opening the grate from above should not say that there are trees
 # above you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_unlocked_clearing
 > close grate
@@ -332,6 +337,7 @@ There is a bird's nest here.
 # ----------------------------------------------------------------------
 * nathan-70-lock-while-open
 # Locking the grate should only work if the grate is closed.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_grating_room
 > unlock grate
@@ -342,6 +348,7 @@ The grate is open.
 # ----------------------------------------------------------------------
 * nathan-70-lock-while-locked
 # Locking the grate should only work if the grate is unlocked.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_grating_room
 > lock grate
@@ -350,6 +357,7 @@ already locked
 # ----------------------------------------------------------------------
 * nathan-70-unlock-while-open
 # Unlocking the grate should only work if the grate is closed.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_grating_room
 > unlock grate
@@ -360,6 +368,7 @@ already open
 # ----------------------------------------------------------------------
 * nathan-70-unlock-while-unlocked
 # Unlocking the grate should only work if the grate is unlocked.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_grating_room
 > unlock grate
@@ -369,6 +378,7 @@ already unlocked
 # ----------------------------------------------------------------------
 * nathan-70-lock-with-anything
 # Locking the grate should only work with the key, not other objects.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
 #
 >{include} _go_to_grating_room
 > unlock grate
@@ -386,6 +396,7 @@ Can you lock a grating with
 # ----------------------------------------------------------------------
 * nathan-71
 # Items visible on the ground below should be described when up in tree.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/65d34eb0a945cc91833bcdf31defa3c5f607b963
 #
 > open mailbox
 > take leaflet
@@ -399,6 +410,7 @@ On the ground below you can see: a leaflet.
 * nathan-73
 # When you kill the thief in his lair, only declare the chalice safe to
 # take if the chalice is still there
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/f43abf81b0339eda55d7faad816d0c156b703025
 #
 >{include} _go_to_treasure_room
 > kill thief
@@ -414,6 +426,7 @@ Taken.
 * nathan-75
 # Putting objects in the grate from the Grating Room should not say they
 # go "into the darkness below".
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/65d34eb0a945cc91833bcdf31defa3c5f607b963
 #
 >{include} _go_to_grating_room
 > unlock grate
@@ -425,6 +438,8 @@ Taken.
 * tree-climb-down
 # CLIMB DOWN from up in the tree should just work without printing
 # "(down the tree)".
+# Fixed in r119
+#
 >{include} _go_to_nest
 > climb down
 !down the tree
@@ -432,6 +447,7 @@ Taken.
 # ----------------------------------------------------------------------
 * troll-unconscious-silent
 # The troll should not make any sound when he's unconscious.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/e37650939857d48e0c6d5e02bac39a50f6679d57
 #
 >{include} _go_to_troll_room
 > kill troll
@@ -443,6 +459,7 @@ The troll makes no sound.
 * dome-room-pour
 # Issuing nonsensical commands like POUR FOO FROM ROPE in the Dome Room
 # should not drop the rope down to the room below.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/4d627475a840a0f024d6674d4c95292006326219
 #
 >{include} _go_to_dome_room
 > pour painting from rope
@@ -451,6 +468,7 @@ The troll makes no sound.
 # ----------------------------------------------------------------------
 * dome-room-jump
 # Jumping in the Dome Room should kill you with a specific message.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/4d98a59a01ea33ae63bf0e7bc736ef8f4d18f1a6
 #
 >{include} _go_to_dome_room
 > jump
@@ -459,6 +477,7 @@ I'm afraid that the leap you attempted has done you in.
 # ----------------------------------------------------------------------
 * dome-room-jump-over
 # Jumping over the railing in the Dome Room should kill you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/4d98a59a01ea33ae63bf0e7bc736ef8f4d18f1a6
 #
 >{include} _go_to_dome_room
 > jump over railing
@@ -468,6 +487,7 @@ You have died
 * dome-room-climb-down
 # CLIMB DOWN from the Dome Room should work, as long as the rope is in
 # place.
+# Fixed in r119
 #
 >{include} _go_to_dome_room
 > tie rope to railing
@@ -478,6 +498,7 @@ Torch Room
 * maze-taunt
 # The thief should pick up objects dropped in the maze and taunt you
 # about it.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/c239bfd7415fc64376fa8ea1dedc6a782d33c452
 #
 >{include} _go_to_maze
 > s. e. u
@@ -508,6 +529,7 @@ asleep
 # ----------------------------------------------------------------------
 * sleeping-cyclops-throw
 # Throwing something at the sleeping cyclops should wake him up.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/17fbfd02d61284925bceae82c6605a22ab8a9960
 #
 >{include} _go_to_cyclops_room
 > throw knife at cyclops
@@ -516,6 +538,7 @@ woke him up
 # ----------------------------------------------------------------------
 * buoy-funny
 # You should notice something funny when you pick up the buoy.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/39572d07ac0c8986d3130641a4216329b3548ade
 #
 >{include} _go_to_boat
 > launch
@@ -525,6 +548,7 @@ You notice something funny
 # ----------------------------------------------------------------------
 * burn-leaves
 # Burning the leaves while they are on the ground should not kill you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/e120acac32a8215054ec9fc9dd39e1cd67715ceb
 #
 >{include} _go_to_dam_lobby
 > s. w. sw. sw. w. s. u
@@ -537,6 +561,7 @@ You notice something funny
 * burn-leaves-in-boat
 # Burning the leaves while they are in a container you are not carrying
 # (e.g. the inflated boat) should not kill you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/e120acac32a8215054ec9fc9dd39e1cd67715ceb
 #
 >{include} _go_to_boat
 > get out of boat
@@ -556,6 +581,7 @@ You notice something funny
 * lose-light-match
 # When a lit match is your only light source and it goes out, the game
 # should say "It is now pitch black."
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a4c7479ecf10d1cd07fd0daa19c26bad293d1228
 #
 >{include}_go_to_end_living_room
 > take matchbook
