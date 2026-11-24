@@ -1566,7 +1566,8 @@ that before long it will be impossible to cross to the other side.">)
 
 <ROUTINE CYCLOPS-FCN ("AUX" COUNT)
 	<SET COUNT ,CYCLOWRATH>
-	<COND (<EQUAL? ,WINNER ,CYCLOPS>
+	<COND (<OR <EQUAL? ,WINNER ,CYCLOPS>
+		   <VERB? HELLO>>
 	       <COND (,CYCLOPS-FLAG
 		      <TELL "No use talking to him. He's fast asleep." CR>)
 		     (<VERB? ODYSSEUS>
@@ -1580,6 +1581,8 @@ that before long it will be impossible to cross to the other side.">)
 	       <COND (<VERB? EXAMINE>
 		      <TELL
 "The cyclops is sleeping like a baby, albeit a very ugly one." CR>)
+		     (<VERB? GIVE>
+		      <TELL "No use. He's fast asleep." CR>)
 		     (<VERB? ALARM KICK ATTACK BURN MUNG THROW>
 		      <COND (<VERB? THROW>
 			     <MOVE ,PRSO ,HERE>)>
