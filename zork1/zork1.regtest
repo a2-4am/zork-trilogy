@@ -30,7 +30,7 @@
 > open window
 > w
 
-* _go_to_cellar
+* _go_to_gallery
 >{include} _go_to_kitchen
 > get all
 > w
@@ -45,9 +45,6 @@
 > turn on lamp
 > get all
 > d
-
-* _go_to_gallery
->{include} _go_to_cellar
 > w
 > drop knife
 > d. s. e
