@@ -728,3 +728,27 @@ It's solid granite
 > s
 > walk around forest
 !can't see any forest
+
+# ----------------------------------------------------------------------
+* sailor-examine
+# EXAMINE SAILOR should give a custom message.
+# Fixed in r119
+#
+> examine sailor
+There is no sailor to be seen.
+
+# ----------------------------------------------------------------------
+* sailor-hello
+# SAILOR, HELLO should give a custom message.
+# Fixed in r119
+#
+> sailor, hello
+You can't talk to the sailor that way.
+
+# ----------------------------------------------------------------------
+* sailor-throw-me
+# THROW ME AT SAILOR should give a custom message.
+# Fixed in r119
+#
+> throw me at sailor
+Why don't you just walk like normal people?
