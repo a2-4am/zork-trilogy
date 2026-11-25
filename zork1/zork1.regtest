@@ -622,3 +622,14 @@ You notice something funny
 > light match
 > wait
 It is now pitch black.
+
+# ----------------------------------------------------------------------
+* untie-rope
+# UNTIE ROPE should work outside the Dome Room.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/17982e000130ff79649c53bce461f34bef8d295f
+> n. e. open. w. w
+> get lamp. light
+> e. u
+> get rope
+> untie rope
+!cannot be tied
