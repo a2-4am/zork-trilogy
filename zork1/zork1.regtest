@@ -678,3 +678,13 @@ The bottle is closed
 > d
 > put lamp in slide
 !falls into the slide and is gone
+
+# ----------------------------------------------------------------------
+* climb-down-stairs
+# CLIMB DOWN STAIRS in Kitchen should say there are no stairs leading
+# down.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/24a4dfc5635a325f17852786052706c0c8136a74
+#
+> n. e. open. w
+> climb down stairs
+There are no stairs leading down
