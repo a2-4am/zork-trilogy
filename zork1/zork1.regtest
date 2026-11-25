@@ -639,7 +639,17 @@ It is now pitch black.
 # DRINK FROM BOTTLE should work like DRINK WATER if there is water in
 # the bottle.
 # Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/ad52b3c78d7b97a7c34f92a7880acd1fbc7c6b6f
+#
 > n. e. open. w
 > get bottle. open it
 > drink from bottle
 I was rather thirsty
+
+# ----------------------------------------------------------------------
+* walk-around-house
+# WALK AROUND HOUSE should work in the house.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/e94825fd358ffe2f210a5ce0722277120ba59287
+#
+> n. e. open. w
+> walk around house
+!can't see any house
