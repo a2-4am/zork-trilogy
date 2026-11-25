@@ -653,3 +653,13 @@ I was rather thirsty
 > n. e. open. w
 > walk around house
 !can't see any house
+
+# ----------------------------------------------------------------------
+* pour-water-closed
+# POUR WATER should only work if the bottle is open.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/3e1e768563616ce95c06922b88ce3ced26c5bade
+#
+> n. e. open. w
+> get bottle
+> pour water
+The bottle is closed
