@@ -256,6 +256,33 @@
 >{include} _go_to_end_living_room
 > e. e. n. w. sw. w
 
+* _fast_kill_thief
+> n. e. open. w. w
+> get sword
+> get lamp
+> e. u
+> light
+> get all
+> d. w
+> move rug
+> open trapdoor
+> d. n
+> kill troll with sword
+> again
+> again
+> again
+> w
+> s. e. u
+> sw. e. s. se
+> odysseus
+> jump. jump. jump. jump. jump
+> u
+> kill thief with knife
+> again
+> again
+> again
+> again
+
 # ----------------------------------------------------------------------
 * sanity
 # Sanity check that we are running the correct game and that the
@@ -409,30 +436,7 @@ On the ground below you can see: a leaflet.
 # saying you cannot reach it.
 # Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/1c3f7e6d8f3e79ef3a9e4fc763654ea21732ed02
 #
-> n. e. open. w. w
-> get sword
-> get lamp
-> e. u
-> light
-> get all
-> d. w
-> move rug
-> open trapdoor
-> d. n
-> kill troll with sword
-> again
-> again
-> again
-> w
-> s. e. u
-> sw. e. s. se
-> odysseus
-> jump
-> u
-> kill thief with knife
-> again
-> again
-> again
+>{include} _fast_kill_thief
 > temple
 > n
 > u
@@ -688,3 +692,21 @@ The bottle is closed
 > n. e. open. w
 > climb down stairs
 There are no stairs leading down
+
+# ----------------------------------------------------------------------
+* granite-raise
+# RAISE GRANITE WALL in Treasure Room should give a custom message.
+# Fixed in r119
+#
+>{include} _fast_kill_thief
+> raise granite wall
+It's solid granite
+
+# ----------------------------------------------------------------------
+* granite-lower
+# LOWER GRANITE WALL in Treasure Room should give a custom message.
+# Fixed in r119
+#
+>{include} _fast_kill_thief
+> lower granite wall
+It's solid granite
