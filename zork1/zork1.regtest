@@ -633,3 +633,13 @@ It is now pitch black.
 > get rope
 > untie rope
 !cannot be tied
+
+# ----------------------------------------------------------------------
+* drink-from-bottle
+# DRINK FROM BOTTLE should work like DRINK WATER if there is water in
+# the bottle.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/ad52b3c78d7b97a7c34f92a7880acd1fbc7c6b6f
+> n. e. open. w
+> get bottle. open it
+> drink from bottle
+I was rather thirsty
