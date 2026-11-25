@@ -404,6 +404,41 @@ Can you lock a grating with
 On the ground below you can see: a leaflet.
 
 # ----------------------------------------------------------------------
+* nathan-72
+# Going up from the Torch Room should check if there is a rope before
+# saying you cannot reach it.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/1c3f7e6d8f3e79ef3a9e4fc763654ea21732ed02
+#
+> n. e. open. w. w
+> get sword
+> get lamp
+> e. u
+> light
+> get all
+> d. w
+> move rug
+> open trapdoor
+> d. n
+> kill troll with sword
+> again
+> again
+> again
+> w
+> s. e. u
+> sw. e. s. se
+> odysseus
+> jump
+> u
+> kill thief with knife
+> again
+> again
+> again
+> temple
+> n
+> u
+!rope
+
+# ----------------------------------------------------------------------
 * nathan-73
 # When you kill the thief in his lair, only declare the chalice safe to
 # take if the chalice is still there
