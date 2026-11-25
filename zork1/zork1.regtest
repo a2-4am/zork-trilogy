@@ -663,3 +663,18 @@ I was rather thirsty
 > get bottle
 > pour water
 The bottle is closed
+
+# ----------------------------------------------------------------------
+* put-in-slide
+# PUT something IN SLIDE should only work in the Slide Room, not the
+# Cellar.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a6c40c56f5640cd167bc15b48ee3062a06d26fbf
+#
+> n. e. open. w. w
+> get lamp
+> light
+> move rug
+> open trapdoor
+> d
+> put lamp in slide
+!falls into the slide and is gone
