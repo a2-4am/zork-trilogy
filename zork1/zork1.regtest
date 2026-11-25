@@ -710,3 +710,21 @@ It's solid granite
 >{include} _fast_kill_thief
 > lower granite wall
 It's solid granite
+
+# ----------------------------------------------------------------------
+* forest-exists
+# WALK AROUND FOREST should acknowledge that the forest exists from
+# West of House, North of House, Behind House, and South of House.
+# Fixed in r119
+#
+> walk around forest
+!can't see any forest
+> n
+> walk around forest
+!can't see any forest
+> e
+> walk around forest
+!can't see any forest
+> s
+> walk around forest
+!can't see any forest
