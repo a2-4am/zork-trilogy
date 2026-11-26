@@ -145,7 +145,7 @@
 > d. n. e. n. ne. e. n
 > get matchbook
 
-* _go_to_boat
+* _go_to_hades
 >{include} _go_to_dam_lobby
 > e
 > push yellow
@@ -169,6 +169,9 @@
 > s
 > get all
 > d. d
+
+* _go_to_boat
+>{include} _go_to_hades
 > ring bell
 > get candles
 > light match
@@ -858,3 +861,14 @@ image in the mirror
 > break mirror with sword
 > examine me
 !image in the mirror
+
+# ----------------------------------------------------------------------
+* bell-book
+# Touching the bell with the book should burn the book, which should
+# kill you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/01cc749d3ba2d6e86ae4b43c86f19af5b815ebe0
+#
+>{include} _go_to_hades
+> ring bell
+> touch bell with book
+You have died
