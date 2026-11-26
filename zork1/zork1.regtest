@@ -770,3 +770,14 @@ score is 69
 > destroy painting with knife
 > score
 score is 63
+
+# ----------------------------------------------------------------------
+* destroy-painting-twice
+# Destroying the painting should check if it has already been destroyed.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/35513378f43c7036041a30d057bbc876dbc5bc90
+#
+>{include} _go_to_gallery
+> get painting
+> destroy painting with sword
+> again
+You think it isn't?
