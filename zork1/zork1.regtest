@@ -71,7 +71,7 @@
 > tie rope to railing
 > d
 
-* _go_to_maze
+* _go_to_living_room_with_sceptre
 >{include} _go_to_torch_room
 > s. e
 > get coffin
@@ -80,6 +80,9 @@
 > s. n. w. w. w
 > open coffin
 > get sceptre
+
+* _go_to_maze
+>{include} _go_to_living_room_with_sceptre
 > put coffin and painting in case
 > e. e. e. e. d. d. n
 > wave sceptre
@@ -752,3 +755,18 @@ You can't talk to the sailor that way.
 #
 > throw me at sailor
 Why don't you just walk like normal people?
+
+# ----------------------------------------------------------------------
+* destroy-in-case
+# If you destroy a treasure inside the trophy case, your score should
+# immediately update.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/60d17bf930ba0e5c2bb7d08a32ba6c1d26b284d4
+#
+>{include} _go_to_living_room_with_sceptre
+> put painting in case
+> score
+score is 69
+> get knife
+> destroy painting with knife
+> score
+score is 63
