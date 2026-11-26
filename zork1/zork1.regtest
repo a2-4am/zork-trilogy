@@ -505,7 +505,20 @@ Taken.
 > kill troll
 > kill troll
 > listen to troll
-The troll makes no sound.
+makes no sound
+
+# ----------------------------------------------------------------------
+* thief-unconscious-silent
+# The thief should not make any sound when he's unconscious.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/cd49d44bd8ee59d8082f349bef83e584e05b8c5f
+#
+>{include} _go_to_treasure_room
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> listen to thief
+makes no sound
 
 # ----------------------------------------------------------------------
 * dome-room-pour
