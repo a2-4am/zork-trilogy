@@ -781,3 +781,13 @@ score is 63
 > destroy painting with sword
 > again
 You think it isn't?
+
+# ----------------------------------------------------------------------
+* throw-at-lamp
+# Throwing something at the lamp should not break the lamp.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/cdefbb59fd56bbc9427afa668c0703badeb53a1c
+#
+> n. e. open. w. w
+> get all
+> throw sword at lamp
+!smashed
