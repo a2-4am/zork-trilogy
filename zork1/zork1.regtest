@@ -791,3 +791,19 @@ You think it isn't?
 > get all
 > throw sword at lamp
 !smashed
+
+# ----------------------------------------------------------------------
+* put-in-open-grate
+# Putting objects in the grate should only check their size if the
+# grate is closed.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a2086e362b0b612eadd81486bc9c86ab2e6231ea
+#
+>{include} _fast_kill_thief
+> d. nw. s. w. d
+> get skeleton key
+> sw. u. s. w. ne
+> unlock grate
+> open grate
+> u
+> put sword in grate
+into the darkness below
