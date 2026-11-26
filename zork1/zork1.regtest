@@ -259,6 +259,19 @@
 >{include} _go_to_end_living_room
 > e. e. n. w. sw. w
 
+* _fast_kill_troll
+> n. e. open. w. w
+> get sword and lamp
+> move rug
+> open trapdoor
+> d
+> light
+> n
+> kill troll
+> kill troll
+> kill troll
+> kill troll
+
 * _fast_kill_thief
 > n. e. open. w. w
 > get sword
@@ -818,3 +831,17 @@ You think it isn't?
 > u
 > put sword in grate
 into the darkness below
+
+# ----------------------------------------------------------------------
+* break-mirror-x-me
+# Examining yourself next to a mirror should check if the mirror is
+# broken.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/95dab764eed2c01115f1c606d6696ae470149409
+#
+>{include} _fast_kill_troll
+> e. e. s. s
+> examine me
+image in the mirror
+> break mirror with sword
+> examine me
+!image in the mirror
