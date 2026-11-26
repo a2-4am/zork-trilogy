@@ -772,6 +772,17 @@ score is 69
 score is 63
 
 # ----------------------------------------------------------------------
+* destroy-painting-look
+# Destroying the painting without ever touching it should update its
+# description.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/a4b17932631488a7056376fe3f58cc1c78ed6e2b
+#
+>{include} _go_to_gallery
+> destroy painting with sword
+> look
+worthless piece of canvas
+
+# ----------------------------------------------------------------------
 * destroy-painting-twice
 # Destroying the painting should check if it has already been destroyed.
 # Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/35513378f43c7036041a30d057bbc876dbc5bc90
