@@ -346,6 +346,16 @@ You can't do that.
 You can't do that.
 
 # ----------------------------------------------------------------------
+* nathan-53
+# Pouring something on the bell should only work with water.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/504f1cb437da9c911b8ef31e4fea75062137ee6c
+#
+>{include} _go_to_hades
+> ring bell
+> pour bar on bell
+!cools the bell
+
+# ----------------------------------------------------------------------
 * nathan-57
 # TAKE ALL while you're in the boat should refuse to take the boat but
 # continue taking other objects, like the label.
@@ -882,13 +892,3 @@ You have died
 > ring bell
 > rub bell
 too hot to touch
-
-# ----------------------------------------------------------------------
-* bell-pour
-# Pouring something on the bell should only work with water.
-# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/504f1cb437da9c911b8ef31e4fea75062137ee6c
-#
->{include} _go_to_hades
-> ring bell
-> pour bar on bell
-!cools the bell
