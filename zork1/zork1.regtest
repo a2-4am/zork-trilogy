@@ -892,3 +892,14 @@ You have died
 > ring bell
 > rub bell
 too hot to touch
+
+# ----------------------------------------------------------------------
+* ghost-in-dome-room
+# When you enter the Dome Room as a ghost and are drawn over the
+# railing, it should print the room description for the Torch Room.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/d7e70762ed5c6df3d47b4c46791ef16885d5d084
+>{include} _go_to_hades
+> light match
+> burn book with match
+> u. n. n. n. se. e
+Torch Room
