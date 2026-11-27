@@ -927,3 +927,13 @@ hand passes through
 > ne. n. n. n. u
 > n. n. w. n. w. n
 !swoops
+
+# ----------------------------------------------------------------------
+* talk-to-spirits
+# Talking to the spirits should only produce a custom message, not both
+# a custom and default message.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/3fe4a70b1683a1ef3e6d7c2c5ca87fcb95d46a10
+#
+>{include} _go_to_hades
+> spirits, jump
+!re-read the manual
