@@ -872,3 +872,13 @@ image in the mirror
 > ring bell
 > touch bell with book
 You have died
+
+# ----------------------------------------------------------------------
+* bell-rub
+# Rubbing the bell should assume you mean with your hands.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/db534d78cd25d4ac46ef9f782fe8493433068292
+#
+>{include} _go_to_hades
+> ring bell
+> rub bell
+too hot to touch
