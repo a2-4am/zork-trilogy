@@ -956,3 +956,13 @@ hand passes through
 > drop all
 > n
 !{count=2}Entrance to Hades
+
+# ----------------------------------------------------------------------
+* bat-eat-garlic
+# If you eat the garlic in front of the bat, the bat should immediately
+# swoop at you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/05deca0f71b7b4213311683a30ac14a9926553cf
+#
+>{include} _go_to_bat_room
+> eat garlic
+grabs you by the scruff
