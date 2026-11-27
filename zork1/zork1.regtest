@@ -903,3 +903,14 @@ too hot to touch
 > burn book with match
 > u. n. n. n. se. e
 Torch Room
+
+# ----------------------------------------------------------------------
+* ghost-rub
+# Rubbing things as a ghost should act like taking things as a ghost.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/8bf63f2f8f1268da3b98c41c152ce5a6b7cb0e1a
+#
+>{include} _go_to_hades
+> ring bell
+> touch bell with book
+> rub bell
+hand passes through
