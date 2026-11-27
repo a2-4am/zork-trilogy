@@ -914,3 +914,16 @@ Torch Room
 > touch bell with book
 > rub bell
 hand passes through
+
+# ----------------------------------------------------------------------
+* ghost-in-bat-room
+# Entering the Bat Room as a ghost, the bat should not swoop down at you.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/b964ed4ba590560aaae3a9f7247268907291f30c
+#
+>{include} _go_to_hades
+> light match
+> burn book with match
+> u. n. n. n. n. n
+> ne. n. n. n. u
+> n. n. w. n. w. n
+!swoops
