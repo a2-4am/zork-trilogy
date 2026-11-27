@@ -170,7 +170,7 @@
 > get all
 > d. d
 
-* _go_to_boat
+* _go_to_squeaky_room
 >{include} _go_to_hades
 > ring bell
 > get candles
@@ -194,7 +194,13 @@
 > n. n. u. n. n. w. n. w
 > drop torch
 > turn on lamp
+
+* _go_to_bat_room
+>{include} _go_to_squeaky_room
 > n
+
+* _go_to_boat
+>{include} _go_to_bat_room
 > get figurine
 > s
 > drop figurine
@@ -937,3 +943,16 @@ hand passes through
 >{include} _go_to_hades
 > spirits, jump
 !re-read the manual
+
+# ----------------------------------------------------------------------
+* bat-kill
+# Entering the Bat Room without a light source or the garlic should
+# cause the bat to swoop down and kill you and transport you to
+# Entrance to Hades, at which point the location name should only be
+# printed once.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/05deca0f71b7b4213311683a30ac14a9926553cf
+#
+>{include} _go_to_squeaky_room
+> drop all
+> n
+!{count=2}Entrance to Hades
