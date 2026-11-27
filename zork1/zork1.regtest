@@ -882,3 +882,13 @@ You have died
 > ring bell
 > rub bell
 too hot to touch
+
+# ----------------------------------------------------------------------
+* bell-pour
+# Pouring something on the bell should only work with water.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/504f1cb437da9c911b8ef31e4fea75062137ee6c
+#
+>{include} _go_to_hades
+> ring bell
+> pour bar on bell
+!cools the bell
