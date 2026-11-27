@@ -494,6 +494,20 @@ Taken.
 !chalice is now safe to take
 
 # ----------------------------------------------------------------------
+* nathan-74
+# When the thief in unconscious, throwing the knife at him should wake
+# him up.
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/0967e4c2049bd6f1e8517f1def33bd103e7e66d7
+#
+>{include} _go_to_treasure_room
+> kill thief
+> kill thief
+> kill thief
+> kill thief
+> throw knife at thief
+suddenly recovers consciousness
+
+# ----------------------------------------------------------------------
 * nathan-75
 # Putting objects in the grate from the Grating Room should not say they
 # go "into the darkness below".
