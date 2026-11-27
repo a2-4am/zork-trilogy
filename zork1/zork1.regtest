@@ -971,7 +971,7 @@ grabs you by the scruff
 * talk-to-bat
 # Talking to the bat should only produce a custom message, not both
 # a custom and default message.
-# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/
+# Fixed in https://github.com/eriktorbjorn/zork-trilogy/commit/05deca0f71b7b4213311683a30ac14a9926553cf
 #
 >{include} _go_to_bat_room
 > bat, jump
